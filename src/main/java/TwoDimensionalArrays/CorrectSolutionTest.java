@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CorrectSolutionTest {
 
-    private final CorrectSolution correctSolution = new CorrectSolution();
+//    private final CorrectSolution correctSolution = new CorrectSolution();
 
     @Test
     void checkDifference() {
@@ -20,6 +20,6 @@ class CorrectSolutionTest {
         ArrayList<Integer> arrLi3Test = new ArrayList<Integer>(Arrays.asList(9, 8, 9));
         List<List<Integer>> nestedListTest = new ArrayList<List<Integer>>(Arrays.asList(arrLi1Test, arrLi2Test, arrLi3Test));
 
-        assertEquals(2, correctSolution.diagonalDifference(nestedListTest));
+        assertEquals(2, CorrectSolution.diagonalDifference(nestedListTest));
     }
 }

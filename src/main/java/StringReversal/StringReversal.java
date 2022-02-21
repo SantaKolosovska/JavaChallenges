@@ -51,7 +51,7 @@ public class StringReversal {
             log.info(arrayOfWordsInString.get(i) + " was added to reversed string");
         }
 
-        return reversedString;
+        return reversedString.trim();
     }
 
     // reverse string using stack
@@ -62,7 +62,7 @@ public class StringReversal {
 
         // looping through string and adding each word to stack
         for (int i = 0; i < stringToReverse.length(); i++) {
-            if (stringToReverse.charAt(i) != ' ' && i != stringToReverse.length()-1) {
+            if (stringToReverse.charAt(i) != ' ' && i != stringToReverse.length() - 1) {
                 word += stringToReverse.charAt(i);
             } else if (stringToReverse.charAt(i) == ' ') {      // resetting word to empty when space is reached
                 stackOfWords.push(word);
@@ -79,7 +79,7 @@ public class StringReversal {
             reversedString += stackOfWords.pop() + " ";
         }
 
-        return reversedString;
+        return reversedString.trim();
     }
 
     // reverses string character by character
@@ -88,7 +88,8 @@ public class StringReversal {
 
         for (int i = stringToReverse.length() - 1; i >= 0; i--) {
             reversedString += stringToReverse.charAt(i);
-        } return reversedString;
+        }
+        return reversedString.trim();
     }
 
 }
