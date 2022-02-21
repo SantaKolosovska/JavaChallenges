@@ -1,3 +1,5 @@
+Java Challenges with some logs and tests
+
 https://www.codecademy.com/resources/blog/java-code-challenges-for-beginners/ 
 
 1. Word reversal - DONE

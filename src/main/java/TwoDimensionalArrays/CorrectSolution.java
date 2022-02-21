@@ -1,9 +1,14 @@
 package TwoDimensionalArrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class CorrectSolution {
+
+    static final Logger log = Logger.getLogger("StringReversal");
+
     public static void main(String[] args) {
         // Given a square matrix, calculate the absolute difference between the sums of its diagonals.
         // Input Format:
@@ -11,7 +16,25 @@ public class CorrectSolution {
         // Each of the next  lines describes a row arr[i] and consists of n space-separated integers arr[i][j].
         // (That's where I made mistake by thinking I need to use the first line as a part of 2d array)
 
-        // CORRECT SOLUTION
+        // short way to create a nested list
+
+        ArrayList<Integer> arrLi1 = new ArrayList<Integer>(Arrays.asList(1, 2, 3));
+        ArrayList<Integer> arrLi2 = new ArrayList<Integer>(Arrays.asList(4, 5, 6));
+        ArrayList<Integer> arrLi3 = new ArrayList<Integer>(Arrays.asList(7, 8, 9));
+        List<List<Integer>> nestedList = new ArrayList<List<Integer>>(Arrays.asList(arrLi1, arrLi2, arrLi3));
+
+        // printing out
+        System.out.println(arrLi1);
+        System.out.println(arrLi2);
+        System.out.println(arrLi3);
+
+        System.out.println();
+        System.out.println(nestedList);
+
+        System.out.println();
+        System.out.println("Diagonal difference: " + diagonalDifference(nestedList));
+
+        // long way to create a nested list
         List<List<Integer>> nestedList2 = new ArrayList<List<Integer>>();
 
         List innerList11 = new ArrayList<Integer>();
@@ -34,6 +57,7 @@ public class CorrectSolution {
         nestedList2.add(innerList13);
 
         System.out.println();
+        System.out.println("Contents of the 2d array/nested list: ");
         System.out.println(innerList11);
         System.out.println(innerList12);
         System.out.println(innerList13);
@@ -53,6 +77,7 @@ public class CorrectSolution {
                 }
             }
         }
+        log.info("Primary diagonal: " + sumPrimaryDiagonal);
 
         int sumSecondaryDiagonal = 0;
         for (int i = 0; i < arr.size(); i++) {
@@ -62,9 +87,8 @@ public class CorrectSolution {
                 }
             }
         }
+        log.info("Secondary diagonal: " + sumSecondaryDiagonal);
 
-        System.out.println("Primary diagonal: " + sumPrimaryDiagonal);
-        System.out.println("Secondary diagonal: " + sumSecondaryDiagonal);
         return Math.abs(sumPrimaryDiagonal - sumSecondaryDiagonal);
     }
 }
