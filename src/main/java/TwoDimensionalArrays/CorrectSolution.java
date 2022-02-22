@@ -16,12 +16,25 @@ public class CorrectSolution {
         // Each of the next  lines describes a row arr[i] and consists of n space-separated integers arr[i][j].
         // (That's where I made mistake by thinking I need to use the first line as a part of 2d array)
 
+        // using createNestedList() method
+
+//        List<List<Integer>> nestedList = new ArrayList<List<Integer>>;
+        List<List<Integer>> nestedListWithMethod = createNestedList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        System.out.println("Nested list created and printed with methods: ");
+        printOutNestedList(nestedListWithMethod);
+
+//        System.out.println(createNestedList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+        System.out.println(diagonalDifference(createNestedList(1, 2, 3, 4, 5, 6, 7, 8, 9)));
+
+
         // short way to create a nested list
 
         ArrayList<Integer> arrLi1 = new ArrayList<Integer>(Arrays.asList(1, 2, 3));
         ArrayList<Integer> arrLi2 = new ArrayList<Integer>(Arrays.asList(4, 5, 6));
         ArrayList<Integer> arrLi3 = new ArrayList<Integer>(Arrays.asList(7, 8, 9));
         List<List<Integer>> nestedList = new ArrayList<List<Integer>>(Arrays.asList(arrLi1, arrLi2, arrLi3));
+
+        System.out.println("How the nested list looks: " + nestedList);
 
         // printing out
         System.out.println(arrLi1);
@@ -90,6 +103,40 @@ public class CorrectSolution {
         log.info("Secondary diagonal: " + sumSecondaryDiagonal);
 
         return Math.abs(sumPrimaryDiagonal - sumSecondaryDiagonal);
+    }
+
+    // method to create nested list with 9 numbers for matrix with 3 rows and 3 columns
+    public static List<List<Integer>> createNestedList(int one, int two, int three, int four, int five, int six, int seven, int eight, int nine) {
+        ArrayList<Integer> arrayListOfNumbers = new ArrayList<Integer>(Arrays.asList(one, two, three, four, five, six, seven, eight, nine));
+        ArrayList<Integer> arrLi1 = new ArrayList<Integer>();
+        ArrayList<Integer> arrLi2 = new ArrayList<Integer>();
+        ArrayList<Integer> arrLi3 = new ArrayList<Integer>();
+
+        for (int i = 0; i < arrayListOfNumbers.size(); i++) {
+            if (i < 3) {
+                arrLi1.add(arrayListOfNumbers.get(i));
+            } else if (i >= 3 && i < 6) {
+                arrLi2.add(arrayListOfNumbers.get(i));
+            } else if (i >= 6) {
+                arrLi3.add(arrayListOfNumbers.get(i));
+            }
+        }
+
+        List<List<Integer>> nestedList = new ArrayList<List<Integer>>(Arrays.asList(arrLi1, arrLi2, arrLi3));
+
+        return nestedList;
+    }
+
+    public static void printOutNestedList(List<List<Integer>> nestedList) {
+        for (int i = 0; i < nestedList.size(); i++) {
+            if (i == 0) {
+                System.out.println(nestedList.get(i));
+            } else if (i == 1) {
+                System.out.println(nestedList.get(i));
+            } else if (i == 2) {
+                System.out.println(nestedList.get(i));
+            }
+        }
     }
 }
 
