@@ -27,7 +27,6 @@ class CorrectSolutionTest {
     @DisplayName("Check if nested list was created correctly")
     @Test
     void checkIfNestedListIsCreatedCorrectly() {
-        List<List<Integer>> nestedList = new ArrayList<List<Integer>>();
         ArrayList<Integer> arrLi1Test = new ArrayList<Integer>(Arrays.asList(1, 2, 3));
         ArrayList<Integer> arrLi2Test = new ArrayList<Integer>(Arrays.asList(4, 5, 6));
         ArrayList<Integer> arrLi3Test = new ArrayList<Integer>(Arrays.asList(9, 8, 9));
