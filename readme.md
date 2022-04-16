@@ -95,3 +95,36 @@ EXTRA
   The first line contains a single integer n - the number of rows and columns in the square matrix.
   Each of the next  lines describes a row arr[i] and consists of n space-separated integers arr[i][j].
   (That's where I made mistake by thinking I need to use the first line as a part of 2d array)
+  
+- For a given word, double it's vowels (banana -> baanaanaa). Initial task to be done in GoLang.
+Solution in GoLang:
+  
+////////////////////////////////////////////////////////////
+package main
+
+import (
+"fmt"
+"strings"
+)
+
+func main() {
+
+	fmt.Println(doubleVowels("Running Man"))
+}
+
+func doubleVowels(input string) (result string) {
+vowels := [...]string{"a", "e", "i", "o", "u"}
+
+	input_to_lower := strings.ToLower(input)
+
+	for i := 0; i < len([]rune(input_to_lower)); i++ {
+		result += string(input_to_lower[i])
+		for j := 0; j < len(vowels); j++ {
+			if vowels[j] == string(input_to_lower[i]) {
+				result = result + string(input_to_lower[i])
+			}
+		}
+	}
+	return
+}
+////////////////////////////////////////////////////////////////////////////
